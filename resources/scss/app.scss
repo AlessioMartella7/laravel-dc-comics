@@ -3,3 +3,11 @@
 body {
     background-color: #000;
 }
+
+img {
+    object-fit: cover;
+    object-position: center;
+}
+a {
+    text-decoration: none;
+}

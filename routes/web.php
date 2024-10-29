@@ -6,4 +6,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/swords', [SwordController::class, 'index'])->name('swords.index');
+Route::get('/swords/{id}', [SwordController::class, 'show'])->name('swords.show');
 

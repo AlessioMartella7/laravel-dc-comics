@@ -11,4 +11,9 @@ class SwordController extends Controller
         $swords = Sword::all();
         return view('swords.index', compact('swords'));
     }
+
+    public function show($id){
+        $sword = Sword::findOrFail($id);
+        return view('swords.show', compact('sword'));
+    }
 }

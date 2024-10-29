@@ -22,7 +22,6 @@ class SwordController extends Controller
     }
 
     public function store(Request $request){
-
         $swordData = $request->all();
 
         $newSword = new Sword();

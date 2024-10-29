@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('swords', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->tinyInteger('weight')->unsigned();
+            $table->string('image');
+            $table->tinyInteger('length')->unsigned();
+            $table->string('material');
+            $table->string('type');
             $table->timestamps();
         });
     }

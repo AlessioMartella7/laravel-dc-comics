@@ -12,7 +12,7 @@
                 </h1>
             </div>
             <div class="col-6 mb-4">
-                <form class="row g-3" method="POST" action="{{ route('sword.update') }}">
+                <form class="row g-3" method="POST" action="{{ route('sword.update', $sword['id']) }}">
                     @method('PUT')
                     @csrf
 
@@ -49,7 +49,9 @@
 
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="col-2">
-                            <a href="{{ route('sword.update', $sword->id) }}" class="btn btn-primary">Apply</a>
+                            <a href="{{ route('sword.index') }}">
+                                <button class="btn btn-primary" type="submit">Apply</button>
+                            </a>
                         </div>
                         <div class="col-2">
                             <button type="reset" class="btn btn-warning">Clear</button>

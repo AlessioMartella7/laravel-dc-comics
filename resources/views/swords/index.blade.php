@@ -29,6 +29,10 @@
                                     <a href="{{ route('sword.edit', $sword->id) }}"
                                         class="btn btn-warning fw-bold m-2">Edit</a>
                                 </div>
+                                {{-- <div>
+                                    <a href="{{ route('sword.delete', $sword->id) }}"
+                                        class="btn btn-danger fw-bold m-2">Delete</a>
+                                </div> --}}
                             </div>
                         </a>
                     </div>

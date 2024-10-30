@@ -41,4 +41,12 @@ class SwordController extends Controller
         $sword = Sword::findOrFail($id);
         return view('swords.edit', compact('sword'));
     }
+
+    public function update(Request $request, string $id){
+        $swordData = $request->all();
+        $sword = Sword::findOrFail($id);
+        $sword->update($swordData);
+
+        return redirect()->route('sword.index');
+    }
 }

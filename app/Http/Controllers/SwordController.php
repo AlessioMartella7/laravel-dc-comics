@@ -12,7 +12,7 @@ class SwordController extends Controller
         return view('swords.index', compact('swords'));
     }
 
-    public function show($id){
+    public function show(string $id){
         $sword = Sword::findOrFail($id);
         return view('swords.show', compact('sword'));
     }
@@ -35,5 +35,10 @@ class SwordController extends Controller
         $newSword->save();
 
         return redirect()->route('swords.index', ['id'=> $newSword->id]);
+    }
+
+    public function edit(string $id){
+        $sword = Sword::findOrFail($id);
+        return view('swords.edit', compact('sword'));
     }
 }

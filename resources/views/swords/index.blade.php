@@ -25,14 +25,20 @@
                                     <p class="card-text"><strong>Material:</strong> {{ $sword['material'] }}</p>
                                     <p class="card-text"><strong>Type:</strong> {{ $sword['type'] }}</p>
                                 </div>
-                                <div>
-                                    <a href="{{ route('sword.edit', $sword->id) }}"
-                                        class="btn btn-warning fw-bold m-2">Edit</a>
+                                <div class="d-flex justify-content-start">
+                                    <div>
+                                        <a href="{{ route('sword.edit', $sword->id) }}"><button
+                                                class="btn btn-warning fw-bold m-2" type="submit">Edit</button></a>
+                                    </div>
+
+                                    <form action="{{ route('sword.delete', $sword['id']) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger fw-bold m-2 text-black" type="submit">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </div>
-                                {{-- <div>
-                                    <a href="{{ route('sword.delete', $sword->id) }}"
-                                        class="btn btn-danger fw-bold m-2">Delete</a>
-                                </div> --}}
                             </div>
                         </a>
                     </div>

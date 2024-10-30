@@ -49,4 +49,11 @@ class SwordController extends Controller
 
         return redirect()->route('sword.index');
     }
+
+    public function destroy(string $id){
+        $sword = Sword::findOrFail($id);
+        $sword->delete();
+
+        return redirect()->route('sword.index');
+    }
 }

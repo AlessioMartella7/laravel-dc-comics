@@ -11,7 +11,7 @@
                     Swords
                 </h1>
             </div>
-            <div class="row">
+            <div class="row mb-5">
                 @forelse ($swords as $sword)
                     <div class="col-3 mb-4">
                         <a href="{{ route('sword.show', $sword['id']) }}">
@@ -31,7 +31,7 @@
                                                 class="btn btn-warning fw-bold m-2" type="submit">Edit</button></a>
                                     </div>
 
-                                    <form action="{{ route('sword.delete', $sword['id']) }}" method="POST">
+                                    <form action="{{ route('sword.delete', $sword->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger fw-bold m-2 text-black" type="submit">

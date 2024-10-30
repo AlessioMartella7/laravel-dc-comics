@@ -12,7 +12,7 @@
                 </h1>
             </div>
             <div class="col-6 mb-4">
-                <form class="row g-3" method="POST" action="{{ route('swords.store') }}">
+                <form class="row g-3" method="POST" action="{{ route('sword.store') }}">
                     @csrf
 
                     <div class="col-12">

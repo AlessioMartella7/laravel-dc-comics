@@ -14,7 +14,7 @@
             <div class="row">
                 @forelse ($swords as $sword)
                     <div class="col-3 mb-4">
-                        <a href="{{ route('swords.show', $sword['id']) }}">
+                        <a href="{{ route('sword.show', $sword['id']) }}">
                             <div class="card bg-dark border border-warning">
                                 <img src="{{ $sword['image'] }}" class="card-img-top" alt="{{ $sword['name'] }}"
                                     style="height: 200px; object-fit: cover;">
@@ -26,7 +26,7 @@
                                     <p class="card-text"><strong>Type:</strong> {{ $sword['type'] }}</p>
                                 </div>
                                 <div>
-                                    <a href="{{ route('swords.edit', $sword->id) }}"
+                                    <a href="{{ route('sword.edit', $sword->id) }}"
                                         class="btn btn-warning fw-bold m-2">Edit</a>
                                 </div>
                             </div>

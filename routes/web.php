@@ -5,9 +5,12 @@ use App\Http\Controllers\SwordController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
-Route::get('/swords', [SwordController::class, 'index'])->name('swords.index');
-Route::get('/swords/create', [SwordController::class, 'create'])->name('swords.create');
-Route::get('/swords/{id}', [SwordController::class, 'show'])->name('swords.show');
-Route::post('/swords', [SwordController::class, 'store'])->name('swords.store');
-Route::get('/swords/{id}/edit',[SwordController::class, 'edit'])->name('swords.edit');
+
+Route::prefix('swords')->name('sword.')->group(function(){
+Route::get('/', [SwordController::class, 'index'])->name('index');
+Route::get('/create', [SwordController::class, 'create'])->name('create');
+Route::get('/{id}', [SwordController::class, 'show'])->name('show');
+Route::post('/', [SwordController::class, 'store'])->name('store');
+Route::get('/{id}/edit',[SwordController::class, 'edit'])->name('edit');
+});
 

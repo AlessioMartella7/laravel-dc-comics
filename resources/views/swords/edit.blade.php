@@ -49,7 +49,7 @@
 
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="col-2">
-                            <a href="{{ route('swords.update', $sword->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('swords.update', $sword->id) }}" class="btn btn-primary">Apply</a>
                         </div>
                         <div class="col-2">
                             <button type="reset" class="btn btn-warning">Clear</button>

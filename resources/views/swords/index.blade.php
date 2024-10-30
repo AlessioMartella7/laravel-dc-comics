@@ -25,6 +25,10 @@
                                     <p class="card-text"><strong>Material:</strong> {{ $sword['material'] }}</p>
                                     <p class="card-text"><strong>Type:</strong> {{ $sword['type'] }}</p>
                                 </div>
+                                <div>
+                                    <a href="{{ route('swords.edit', $sword->id) }}"
+                                        class="btn btn-warning fw-bold m-2">Edit</a>
+                                </div>
                             </div>
                         </a>
                     </div>

@@ -8,7 +8,7 @@
         <div class="row justify-content-center ">
             <div class="col-12">
                 <h1 class="text-center my-5 text-warning">
-                    Sword Create
+                    Sword Editing
                 </h1>
             </div>
             <div class="col-6 mb-4">

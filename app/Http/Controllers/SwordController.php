@@ -22,7 +22,16 @@ class SwordController extends Controller
     }
 
     public function store(Request $request){
-        $swordData = $request->all();
+
+        $swordData = $request->validate([
+            'name' => 'required|string|min:2',
+            'weight' => 'required|numeric|integer',
+            'image' => 'required|url',
+            'length' => 'required|numeric|integer',
+            'material' => 'required|string|min:3',
+            'type' => 'required|string|min:4',
+
+        ]);
 
         $newSword = new Sword();
         $newSword->name = $swordData['name'];
@@ -34,7 +43,7 @@ class SwordController extends Controller
 
         $newSword->save();
 
-        return redirect()->route('swords.index', ['id'=> $newSword->id]);
+        return redirect()->route('sword.index', ['id'=> $newSword->id]);
     }
 
     public function edit(string $id){

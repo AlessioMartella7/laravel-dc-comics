@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSwordRequest;
 use App\Models\Sword;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class SwordController extends Controller
@@ -21,17 +23,10 @@ class SwordController extends Controller
         return view('swords.create');
     }
 
-    public function store(Request $request){
+    public function store(StoreSwordRequest $request)
+    {
 
-        $swordData = $request->validate([
-            'name' => 'required|alpha|string|min:2',
-            'weight' => 'required|numeric|integer',
-            'image' => 'required|url',
-            'length' => 'required|numeric|integer',
-            'material' => 'required|string|min:3',
-            'type' => 'required|string|min:4',
-
-        ]);
+        $swordData = $request->validated();
 
         $newSword = new Sword();
         $newSword->name = $swordData['name'];
@@ -51,16 +46,9 @@ class SwordController extends Controller
         return view('swords.edit', compact('sword'));
     }
 
-    public function update(Request $request, string $id){
-        $swordData = $request->validate([
-            'name' => 'required|alpha|string|min:2',
-            'weight' => 'required|numeric|integer',
-            'image' => 'required|url',
-            'length' => 'required|numeric|integer',
-            'material' => 'required|string|min:3',
-            'type' => 'required|string|min:4',
-
-        ]);
+    public function update(StoreSwordRequest $request, string $id)
+    {
+        $swordData = $request->validated();
 
         $sword = Sword::findOrFail($id);
         $sword->update($swordData);

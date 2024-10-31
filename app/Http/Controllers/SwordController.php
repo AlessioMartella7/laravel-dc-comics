@@ -24,7 +24,7 @@ class SwordController extends Controller
     public function store(Request $request){
 
         $swordData = $request->validate([
-            'name' => 'required|string|min:2',
+            'name' => 'required|alpha|string|min:2',
             'weight' => 'required|numeric|integer',
             'image' => 'required|url',
             'length' => 'required|numeric|integer',
@@ -52,7 +52,16 @@ class SwordController extends Controller
     }
 
     public function update(Request $request, string $id){
-        $swordData = $request->all();
+        $swordData = $request->validate([
+            'name' => 'required|alpha|string|min:2',
+            'weight' => 'required|numeric|integer',
+            'image' => 'required|url',
+            'length' => 'required|numeric|integer',
+            'material' => 'required|string|min:3',
+            'type' => 'required|string|min:4',
+
+        ]);
+
         $sword = Sword::findOrFail($id);
         $sword->update($swordData);
 
